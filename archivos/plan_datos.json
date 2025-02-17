@@ -1,0 +1,232 @@
+{
+    "plan_de_estudios": [
+        {
+            "cuatrimestre": 1,
+            "materias": [
+                {
+                    "nombre": "Análisis 1",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": []
+                },
+                {
+                    "nombre": "Introducción a la Ciencia de Datos",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": []
+                },
+                {
+                    "nombre": "Programación 1",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": []
+                }
+            ]
+        },
+        {
+            "cuatrimestre": 2,
+            "materias": [
+                {
+                    "nombre": "Análisis 2",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": [
+                        "Análisis 1"
+                    ]
+                },
+                {
+                    "nombre": "Matemática Discreta",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": [
+                        "Análisis 1"
+                    ]
+                },
+                {
+                    "nombre": "Introducción al Aprendizaje Automático",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": [
+                        "Análisis 1",
+                        "Introducción a la Ciencia de Datos",
+                        "Programación 1"
+                    ]
+                }
+            ]
+        },
+        {
+            "cuatrimestre": 3,
+            "materias": [
+                {
+                    "nombre": "Infraestructura para Ciencia de Datos",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": [
+                        "Programación 1"
+                    ]
+                },
+                {
+                    "nombre": "Algoritmos I",
+                    "horas_semanales": 10,
+                    "horas_cuatrimestrales": 160,
+                    "correlativas": [
+                        "Análisis 1"
+                    ]
+                },
+                {
+                    "nombre": "Probabilidad y Estadística",
+                    "horas_semanales": 4,
+                    "horas_cuatrimestrales": 64,
+                    "correlativas": [
+                        "Análisis 2"
+                    ]
+                }
+            ]
+        },
+        {
+            "cuatrimestre": 4,
+            "materias": [
+                {
+                    "nombre": "Estadística e Inferencia I",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": [
+                        "Probabilidad y Estadística",
+                        "Matemática Discreta"
+                    ]
+                },
+                {
+                    "nombre": "Algoritmos II",
+                    "horas_semanales": 9,
+                    "horas_cuatrimestrales": 144,
+                    "correlativas": [
+                        "Análisis 2",
+                        "Matemática Discreta",
+                        "Algoritmos I"
+                    ]
+                },
+                {
+                    "nombre": "Electiva 1",
+                    "horas_semanales": 4,
+                    "horas_cuatrimestrales": 64,
+                    "correlativas": []
+                }
+            ]
+        },
+        {
+            "cuatrimestre": 5,
+            "materias": [
+                {
+                    "nombre": "Estadística e Inferencia II",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": [
+                        "Estadística e Inferencia I"
+                    ]
+                },
+                {
+                    "nombre": "Programación 2",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": [
+                        "Programación 1",
+                        "Algoritmos II"
+                    ]
+                },
+                {
+                    "nombre": "Electiva 2",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": []
+                }
+            ]
+        },
+        {
+            "cuatrimestre": 6,
+            "materias": [
+                {
+                    "nombre": "Ciencia de Datos",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": [
+                        "Estadística e Inferencia II",
+                        "Programación 2"
+                    ]
+                },
+                {
+                    "nombre": "Bases de Datos",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": [
+                        "Algoritmos II"
+                    ]
+                },
+                {
+                    "nombre": "Ingeniería de Software",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": [
+                        "Programación 2",
+                        "Algoritmos II"
+                    ]
+                }
+            ]
+        },
+        {
+            "cuatrimestre": 7,
+            "materias": [
+                {
+                    "nombre": "Aprendizaje Automático",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": [
+                        "Estadística e Inferencia II",
+                        "Programación 2"
+                    ]
+                },
+                {
+                    "nombre": "Electiva 3",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": [
+                        "Ciencia de Datos",
+                        "Ingeniería de Software"
+                    ]
+                },
+                {
+                    "nombre": "Optativa 1",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": []
+                }
+            ]
+        },
+        {
+            "cuatrimestre": 8,
+            "materias": [
+                {
+                    "nombre": "Aprendizaje Profundo",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": [
+                        "Aprendizaje Automático"
+                    ]
+                },
+                {
+                    "nombre": "Optativa 2",
+                    "horas_semanales": 8,
+                    "horas_cuatrimestrales": 128,
+                    "correlativas": [
+                        "Aprendizaje Profundo"
+                    ]
+                },
+                {
+                    "nombre": "Optativa 3",
+                    "horas_semanales": 6,
+                    "horas_cuatrimestrales": 96,
+                    "correlativas": []
+                }
+            ]
+        }
+    ]
+}

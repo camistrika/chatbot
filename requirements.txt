@@ -1,0 +1,14 @@
+transformers
+torch
+accelerate
+bitsandbytes
+chromadb
+langchain
+beautifulsoup4
+requests
+langchain_community
+PyPDF2
+pdfplumber
+huggingface_hub
+langchain-ollama
+sentence-transformers
