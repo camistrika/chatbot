@@ -6,10 +6,11 @@ Este proyecto implementa un chatbot basado en un sistema RAG (Retrieve-Augment-G
 
 ## Requisitos
 
-- Python 3.8 o superior
-- pip (gestor de paquetes)
-- Ollama (para ejecutar el modelo de lenguaje)
-- chromadb (para la base de datos vectorial)
+- Python 3.8 o superior.
+- 7 GB o más de RAM libres.
+- pip (gestor de paquetes).
+- Ollama (para ejecutar el modelo de lenguaje).
+- chromadb (para la base de datos vectorial).
 
 ## Instalación
 
