@@ -17,8 +17,6 @@ Este proyecto implementa un chatbot basado en un sistema RAG (Retrieve-Augment-G
 1. Clonar el repositorio
    
    `git clone https://github.com/usuario/chatbot.git`
-   
-   `cd API-Cine`
 
 2. Crear un entorno virtual (opcional pero recomendado)
    
