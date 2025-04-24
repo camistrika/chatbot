@@ -1,3 +1,5 @@
+import uuid
+import time
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.utils import embedding_functions
@@ -15,6 +17,18 @@ def initialize_model():
     """
     return SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
 
+def generate_unique_name(prefix="base"):
+    """
+    Genera un nombre único usando un timestamp y un UUID.
+
+    Args:
+        prefix (str): Prefijo para el nombre.
+
+    Returns:
+        str: Nombre único.
+    """
+    return f"{prefix}_{int(time.time())}_{uuid.uuid4().hex[:6]}"
+
 
 def initialize_client(path: str) -> chromadb.PersistentClient:
     """
@@ -30,7 +44,10 @@ def initialize_client(path: str) -> chromadb.PersistentClient:
     return client
 
 
-def embedding_function(model_name: str) -> embedding_functions.SentenceTransformerEmbeddingFunction:
+
+
+
+def embedding_function(model_name: str):
     """
     Crea una función de embeddings para ChromaDB usando un modelo de SentenceTransformer.
 
@@ -38,41 +55,38 @@ def embedding_function(model_name: str) -> embedding_functions.SentenceTransform
         model_name (str): Nombre del modelo de embeddings.
 
     Returns:
-        SentenceTransformerEmbeddingFunction: Función de embeddings para ChromaDB.
+        embedding_functions.SentenceTransformerEmbeddingFunction: Función de embeddings para ChromaDB.
     """
-    return embedding_functions.SentenceTransformerEmbeddingFunction(model_name=model_name)
+    # Aquí pasamos el nombre del modelo directamente, no la función 'encode'
+    return embedding_functions.SentenceTransformerEmbeddingFunction(model_name)
+
+
+
+
 
 
 # ----------------------------------------
 # Funciones de manipulación de colecciones
 # ----------------------------------------
 
-def create_collection(client: chromadb.PersistentClient, name: str, embedding_function) -> chromadb.Collection:
+def create_collection(client: chromadb.PersistentClient, embedding_function) -> chromadb.Collection:
     """
-    Crea o recupera una colección en ChromaDB.
+    Crea una colección nueva con un nombre único en ChromaDB.
 
     Args:
         client (chromadb.PersistentClient): Cliente de ChromaDB.
-        name (str): Nombre de la colección.
         embedding_function: Función de embeddings.
 
     Returns:
-        chromadb.Collection: Colección creada o recuperada.
+        chromadb.Collection: Colección creada.
     """
-
-    if name in client.list_collections():
-        print(f"Collection '{name}' ya existe. Cargando la colección existente...")
-        collection = client.get_collection(
-            name=name, 
-            embedding_function=embedding_function
-        )
-    else:
-        collection = client.create_collection(
-            name=name, 
-            embedding_function=embedding_function, 
-            metadata={"hnsw:space": "cosine"}
-        )
-        print(f"Collection '{name}' creada exitosamente.")
+    collection_name = generate_unique_name("collection")
+    collection = client.create_collection(
+        name=collection_name, 
+        embedding_function=embedding_function, 
+        metadata={"hnsw:space": "cosine"}
+    )
+    print(f"Collection '{collection_name}' creada exitosamente.")
     
     return collection
 
@@ -117,3 +131,17 @@ def retrieve_data(collection: chromadb.Collection, query: str, top_k: int = 3) -
         include=["documents", "metadatas"]
     )
     return results
+
+def delete_collection(client: chromadb.PersistentClient, collection_name: str):
+    """
+    Elimina una colección en ChromaDB.
+
+    Args:
+        client (chromadb.PersistentClient): Cliente de ChromaDB.
+        collection_name (str): Nombre de la colección a eliminar.
+    """
+    if collection_name in client.list_collections():
+        client.delete_collection(collection_name)
+        print(f"Colección '{collection_name}' eliminada exitosamente.")
+    else:
+        print(f"La colección '{collection_name}' no existe.")
