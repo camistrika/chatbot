@@ -34,15 +34,25 @@ Este proyecto implementa un chatbot basado en un sistema RAG (Retrieve-Augment-G
    
    Instalar el modelo Llama 3.1 (8B): `ollama pull llama3.1:8b`
 
-6. Configuración de la Base de Datos Vectorial
+5. Configuración de la Base de Datos Vectorial
 
    Asegúrate de tener chromadb instalado para gestionar la base de datos vectorial y almacenar los embeddings. No es necesario configurar una base de datos externa, ya que chromadb manejará esto automáticamente.
 
-6. Ejecutar el Chatbot Localmente 
-   
-   `python main.py`
+6. Ejecutar el Chatbot Localmente
 
-Luego de estos pasos, podrás interactuar con el chatbot en la terminal.
+   Hay dos opciones para ejecutar el chatbot:
+
+      **Opción A:** Desde la terminal (modo consola)
+      
+      `python main.py`
+   
+      Esto iniciará el chatbot directamente en la terminal, permitiéndote interactuar por línea de comandos.
+   
+      **Opción B:** Desde una interfaz web con Streamlit
+   
+      `streamlit run app.py`
+      
+      Esto abrirá una interfaz gráfica en tu navegador para interactuar con el chatbot.
 
 
 ## Notas Adicionales
